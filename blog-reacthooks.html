@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>React Hooks</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+	<link id="theme-style" rel="stylesheet" href="assets/css/blog.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="indexblog.html">Aditya's Blogs</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/WhatsApp Image 2022-07-21 at 9.56.22 PM (1)-modified.png" alt="image" >			
+					
+					<div class="bio mb-3">Hi, my name is Aditya Kumar, Enthusiastic Software Engineer.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/aditya-kumar-814291117"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Aditya715068"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://stackoverflow.com/users/19761657/aditya-se"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://codepen.io/aditya715068"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item active">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+				    <a class="btn btn-primary" href="mailto:adikumar1238@gmail.com">Get in Touch</a>
+				</div>
+			</div>
+		</nav>
+    </header>
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">Introduction to React Hooks API Reference</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://made4dev.com"><img class="img-fluid" src="https://miro.medium.com/max/2428/1*PMQ20pqaLBMpwKF3JRN_ng.jpeg" alt="image"></a>
+				        
+				    </figure>
+				    <p> Hooks are a new addition in React 16.8. They let developers use state and other React features without writing a class For example- State of a component</p>
+					<p>If you’re new to Hooks, you might want to check out the overview first:
+
+                        <h5 class="my-3">Basic Hooks:</h5>
+						<ul class="mb-5">
+						  <li class="mb-2">useState</li>
+						  <li class="mb-2">useEffect</li>
+						  <li class="mb-2">useContext</li>
+						</ul>
+
+                        <h5 class="my-3">Additional Hooks:</h5>
+						<ul class="mb-5">
+						  <li class="mb-2">useReducer</li>
+						  <li class="mb-2">useCallback</li>
+						  <li class="mb-2">useMemo</li>
+						  <li class="mb-2">useRef</li>
+						  <li class="mb-2">useTransition</li>
+						  <li class="mb-2">useId</li>
+						</ul>
+
+
+					</p>
+
+
+
+
+					
+						<h3 class="mt-5 mb-3">useState</h3>
+						<p> Functional components are some of the more commonly used components in ReactJS. Most developers prefer using functional components over class-based components for the simple reason that functional components require less coding (on the developer’s part). However, two main features for the class are lost when one goes with a functional component – a dedicated state which persists through render calls as well as the use of lifecycle functions to control how the component looks and behaves at separate stages of its lifecycle. </p>
+						<p>useState() hook allows one to declare a state variable inside a function. It should be noted that one use of useState() can only be used to declare one state variable. </p>
+						<pre>
+							<code>
+								const [state, setState] = useState(initialState);
+							</code>
+						</pre>
+					
+
+						<h3 class="mt-5 mb-3">useEffect</h3>
+						<p>The motivation behind the introduction of useEffect Hook is to eliminate the side-effects of using class-based components. For example, tasks like updating the DOM, fetching data from API end-points, setting up subscriptions or timers, etc can be lead to unwarranted side-effects. Since the render method is to quick to produce a side-effect one needs to use life cycle methods to observe the side effects. For example, consider updating the document title for a simple counter component to the current value. On the initial render, we set the current clicked value to 0 clicks. So, this section is coded into the componentDidMount() method which is executed only once in the component life cycle. Then we create a button to increment the count state value by one on every click. As the count value state changes, we also need to update the document title again and for that, we need to write the same piece of code in componentDidUpdate(). The componentDidupdate() method is perfect for updating the counter value at any time the state changes but the repetition of code is one of the side-effects.</p>
+
+
+						<pre>
+							<code>
+								useEffect(
+  () => {
+    const subscription = props.source.subscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
+  },
+  [props.source],
+);
+							</code>
+						</pre>
+
+
+
+                        <p>If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array ([]) as a second argument. This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run. This isn’t handled as a special case — it follows directly from how the dependencies array always works.</p>
+<p>If you pass an empty array ([]), the props and state inside the effect will always have their initial values. While passing [] as the second argument is closer to the familiar componentDidMount and componentWillUnmount mental model, there are usually better solutions to avoid re-running effects too often. Also, don’t forget that React defers running useEffect until after the browser has painted, so doing extra work is less of a problem.</p>
+				
+
+
+
+
+
+
+<h3 class="mt-5 mb-3">useContext</h3>
+						<p> It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.</p>
+                        <p>The PROBLEM:State should be held by the highest parent component in the stack that requires access to the state.
+
+                            To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
+                            
+                            To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".</p>
+
+
+
+
+
+                            <pre>
+                                <code>
+                                    
+        import { useState } from "react";
+        import ReactDOM from "react-dom/client";
+                                    
+          function Component1() {
+              const [user, setUser] = useState("Jesse Hall");
+                                    
+                     return (
+                      &lt;>   
+                       &lt;h1>{`Hello ${user}!`}&lt;/h1>
+                       &lt;Component2 user={user} /
+                      &lt;/>
+                     );
+                         }
+                                    
+           function Component2({ user }) {
+                     return (
+                     &lt;>
+                   &lt;h1>Component 2&lt;/h1>
+                  &lt;Component3 user={user} />
+                    &lt;/>
+                           );
+                  }
+                                    
+            function Component3({ user }) {
+                      return (
+                         &lt;>
+                       &lt;h1>Component 3&lt;/h1>
+                  &lt;Component4 user={user} />
+                        &lt;/>
+                                    );
+                                    }
+                                    
+                function Component4({ user }) {
+                         return (
+                          &lt;>
+                       &lt;h1>Component 4&lt;/h1>
+                       &lt;Component5 user={user} />
+                           &lt;/>
+                           );
+                                    }
+                                    
+                function Component5({ user }) {
+                       return (
+                          &lt;>
+                       &lt;h1>Component 5&lt;/h1>
+                       &lt;h2>{`Hello ${user} again!`}&lt;/h2>
+                         &lt;/>
+                                      );
+                                    }
+                                    
+                       const root = ReactDOM.createRoot(document.getElementById('root'));
+                       root.render(&lt;Component1 />);
+                                    
+                                </code>
+                            </pre>
+
+
+                            <P>Even though components 2-4 did not need the state, they had to pass the state along so that it could reach component 5.</P>
+
+                            <P>THE SOLUTION:To create context, you must Import createContext and initialize it:</P>
+
+                            <pre>
+                                <code>
+                                 	<pre>
+							<code>
+                                import { useState, createContext } from "react";
+                                import ReactDOM from "react-dom/client";
+                                
+                                const UserContext = createContext()
+							</code>
+						</pre>
+                                </code>
+                            </pre>
+
+
+                            <P>Wrap child components in the Context Provider and supply the state value.</P>
+                            <pre>
+                               
+							<code>
+                                function Component1() {
+                                    const [user, setUser] = useState("Jesse Hall");
+                                  
+                                    return (
+                                        &lt;UserContext.Provider value={user}>
+                                        &lt;h1>{`Hello ${user}!`}&lt;/h1>
+                                        &lt;Component2 user={user} />
+                                        &lt;/UserContext.Provider>
+                                    );
+                                  }
+							</code>
+						</pre>
+                                
+
+                            <P>In order to use the Context in a child component, we need to access it using the useContext Hook.
+
+                                First, include the useContext in the import statement:</P>
+
+
+                                <pre>
+                                    
+                                <code>
+                                    import { useState, createContext, useContext } from "react";
+                                    import ReactDOM from "react-dom/client";
+                                    
+                                    const UserContext = createContext();
+                                    
+                                    function Component1() {
+                                      const [user, setUser] = useState("Jesse Hall");
+                                    
+                                      return (
+                                        &lt;UserContext.Provider value={user}>
+                                        &lt;h1>{`Hello ${user}!`}&lt;/h1>
+                                        &lt;Component2 />
+                                        &lt;/UserContext.Provider>
+                                      );
+                                    }
+                                    
+                                    function Component2() {
+                                      return (
+                                        &lt;>
+                                        &lt;h1>Component 2&lt;/h1>
+                                        &lt;Component3 />
+                                        &lt;/>
+                                      );
+                                    }
+                                    
+                                    function Component3() {
+                                      return (
+                                        &lt;>
+                                        &lt;h1>Component 3&lt;/h1>
+                                        &lt;Component4 />
+                                          &lt;/>
+                                      );
+                                    }
+                                    
+                                    function Component4() {
+                                      return (
+                                        &lt;>
+                                        &lt;h1>Component 4&lt;/h1>
+                                        &lt;Component5 />
+                                        &lt;/>
+                                      );
+                                    }
+                                    
+                                    function Component5() {
+                                      const user = useContext(UserContext);
+                                    
+                                      return (
+                                        &lt;>
+                                        &lt;h1>Component 5&lt;/h1>
+                                        &lt;h2>{`Hello ${user} again!`}&lt;/h2>
+                                        &lt;/>
+                                      );
+                                    }
+                                    
+                                    const root = ReactDOM.createRoot(document.getElementById('root'));
+                                    root.render(&lt;Component1 />);
+                                </code>
+                            </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<h3 class="mt-5 mb-3">useReducer</h3>
+						<p>The useReducer Hook is similar to the useState Hook.
+
+                            It allows for custom state logic.
+                            
+                            If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.</p>
+
+<p>Class is just a template. You can't perform any actions on it. Consider class is your website UX Design(wireframes). You create it to get an idea of how your website UI will look alike at the end. Users can't do interactions with your wireframes as they will do on an actual website.</p>
+
+<p>The useReducer Hook accepts two arguments.
+    <pre>
+        <code>
+
+    useReducer(&lt;reducer>, &lt;initialState>)
+        </code>
+    </pre>
+    
+    The reducer function contains your custom state logic and the initialStatecan be a simple value but generally will contain an object.
+    
+    The useReducer Hook returns the current stateand a dispatchmethod.
+    
+    Here is an example of useReducer in a counter app:</p>
+
+<pre>
+	<code>
+        import { useReducer } from "react";
+        import ReactDOM from "react-dom/client";
+        
+        const initialTodos = [
+          {
+            id: 1,
+            title: "Todo 1",
+            complete: false,
+          },
+          {
+            id: 2,
+            title: "Todo 2",
+            complete: false,
+          },
+        ];
+        
+        const reducer = (state, action) => {
+          switch (action.type) {
+            case "COMPLETE":
+              return state.map((todo) => {
+                if (todo.id === action.id) {
+                  return { ...todo, complete: !todo.complete };
+                } else {
+                  return todo;
+                }
+              });
+            default:
+              return state;
+          }
+        };
+        
+        function Todos() {
+          const [todos, dispatch] = useReducer(reducer, initialTodos);
+        
+          const handleComplete = (todo) => {
+            dispatch({ type: "COMPLETE", id: todo.id });
+          };
+        
+          return (
+            &lt;>
+              {todos.map((todo) => (
+                &lt;div key={todo.id}>
+                    &lt;label>
+                    &lt;input
+                      type="checkbox"
+                      checked={todo.complete}
+                      onChange={() => handleComplete(todo)}
+                    />
+                    {todo.title}
+                    &lt;/label>
+                  &lt;/div>
+              ))}
+              &lt;/>
+          );
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;Todos />);
+	</code>
+</pre>
+
+
+
+<p>This is just the logic to keep track of the todo complete status.
+
+    All of the logic to add, delete, and complete a todo could be contained within a single useReducer Hook by adding more actions.</p>
+
+
+<h3 class="mt-5 mb-3">useCallback</h3>
+<p>The React useCallback Hook returns a memoized callback function.
+
+    Think of memoization as caching a value so that it does not need to be recalculated.
+    
+    This allows us to isolate resource intensive functions so that they will not automatically run on every render.
+    
+    The useCallback Hook only runs when one of its dependencies update.
+    
+    This can improve performance.
+    
+    The useCallback and useMemo Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function</p>
+<p>Problem
+    One reason to use useCallback is to prevent a component from re-rendering unless its props have changed.</p>
+
+
+    <P>To fix this, we can use the useCallback hook to prevent the function from being recreated unless necessary.
+
+        Use the useCallback Hook to prevent the Todos component from re-rendering needlessly:</P>
+      
+        <p>index.js</p>
+
+
+<pre>
+	<code>
+        import { useState, useCallback } from "react";
+        import ReactDOM from "react-dom/client";
+        import Todos from "./Todos";
+        
+        const App = () => {
+          const [count, setCount] = useState(0);
+          const [todos, setTodos] = useState([]);
+        
+          const increment = () => {
+            setCount((c) => c + 1);
+          };
+          const addTodo = useCallback(() => {
+            setTodos((t) => [...t, "New Todo"]);
+          }, [todos]);
+        
+          return (
+            &lt;>
+            &lt;Todos todos={todos} addTodo={addTodo} />
+            &lt;hr />
+            &lt;div>
+                Count: {count}
+                &lt;button onClick={increment}>+&lt;/button>
+                &lt;/div>
+                &lt;/>
+          );
+        };
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(&lt;App />);
+	</code>
+</pre>
+<p>Todo.js</p>
+
+<pre>
+	<code>
+        import { memo } from "react";
+
+        const Todos = ({ todos, addTodo }) => {
+          console.log("child render");
+          return (
+            &lt;>
+            &lt;h2>My Todos&lt;/h2>
+              {todos.map((todo, index) => {
+                return &lt;p key={index}>{todo}&lt;/p>;
+              })}
+              &lt;button onClick={addTodo}>Add Todo&lt;/button>
+              &lt;/>
+          );
+        };
+        
+        export default memo(Todos);
+	</code>
+</pre>
+
+
+
+
+
+<h3 class="mt-5 mb-3">useMemo</h3>
+
+<p>The React useMemo Hook returns a memoized value.
+
+    Think of memoization as caching a value so that it does not need to be recalculated.
+    
+    The useMemo Hook only runs when one of its dependencies update.
+    
+    This can improve performance.</p>
+<p>To fix this performance issue, we can use the useMemo Hook to memoize the expensiveCalculation function. This will cause the function to only run when needed.
+
+    We can wrap the expensive function call with useMemo.
+    
+    The useMemoHook accepts a second parameter to declare dependencies. The expensive function will only run when its dependencies have changed.
+    
+    In the following example, the expensive function will only run when count is changed and not when todo's are added.</p>
+
+	
+
+
+
+	<pre>
+		<code>
+            import { useState, useMemo } from "react";
+            import ReactDOM from "react-dom/client";
+            
+            const App = () => {
+              const [count, setCount] = useState(0);
+              const [todos, setTodos] = useState([]);
+              const calculation = useMemo(() => expensiveCalculation(count), [count]);
+            
+              const increment = () => {
+                setCount((c) => c + 1);
+              };
+              const addTodo = () => {
+                setTodos((t) => [...t, "New Todo"]);
+              };
+            
+              return (
+                &lt;div>
+                &lt;div>
+                &lt;h2>My Todos&lt;/h2>
+                    {todos.map((todo, index) => {
+                      return &lt;p key={index}>{todo}&lt;/p>;
+                    })}
+                    &lt;button onClick={addTodo}>Add Todo&lt;/button>
+                    &lt;/div>
+                    &lt;hr />
+                    &lt;div>
+                    Count: {count}
+                    &lt;button onClick={increment}>+&lt;/button>
+                    &lt;h2>Expensive Calculation&lt;/h2>
+                    {calculation}
+                    &lt;/div>
+                    &lt;/div>
+              );
+            };
+            
+            const expensiveCalculation = (num) => {
+              console.log("Calculating...");
+              for (let i = 0; i < 1000000000; i++) {
+                num += 1;
+              }
+              return num;
+            };
+            
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(&lt;App />);
+		</code>
+	</pre>
+
+
+
+
+
+
+
+
+
+
+	<p>The array of dependencies is not passed as arguments to the function. Conceptually, though, that’s what they represent: every value referenced inside the function should also appear in the dependencies array. In the future, a sufficiently advanced compiler could create this array automatically.</p>
+
+
+	<h3 class="mt-5 mb-3">useRef</h3>
+	<p>useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.</p>
+
+<p>The useRef Hook allows you to persist values between renders.
+
+    It can be used to store a mutable value that does not cause a re-render when updated.
+    
+    It can be used to access a DOM element directly.</p>
+
+
+	<p>If we tried to count how many times our application renders using the useState Hook, we would be caught in an infinite loop since this Hook itself causes a re-render.
+
+        To avoid this, we can use the useRef Hook.</p>
+
+        <p>In general, we want to let React handle all DOM manipulation.
+
+            But there are some instances where useRef can be used without causing issues.
+            
+            In React, we can add a ref attribute to an element to access it directly in the DOM.</p>
+
+
+
+
+	<pre>
+		<code>
+			import { useRef } from "react";
+import ReactDOM from "react-dom/client";
+
+function App() {
+  const inputElement = useRef();
+
+  const focusInput = () => {
+    inputElement.current.focus();
+  };
+
+  return (
+    &lt>
+      &ltinput type="text" ref={inputElement} />
+      &ltbutton onClick={focusInput}>Focus Input&lt/button>
+      &lt/>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&ltApp />);
+		</code>
+	</pre>
+
+	<p>The useRef Hook can also be used to keep track of previous state values.
+
+        This is because we are able to persist useRef values between renders.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				    <h3 class="mt-5 mb-3">useTransition</h3>
+				    <p>Returns a stateful value for the pending state of the transition, and a function to start it.
+
+                        startTransition lets you mark updates in the provided callback as transitions: </p>
+
+					<p>isPending indicates when a transition is active to show a pending state:</p>
+				    <pre>
+					    <code>
+                            const [isPending, startTransition] = useTransition();
+                            startTransition(() => {
+                                setCount(count + 1);
+                              })
+
+
+
+
+
+
+                              function App() {
+                                const [isPending, startTransition] = useTransition();
+                                const [count, setCount] = useState(0);
+                                
+                                function handleClick() {
+                                  startTransition(() => {
+                                    setCount(c => c + 1);
+                                  })
+                                }
+                              
+                                return (
+                                    &ltdiv>
+                                    {isPending && &ltSpinner />}
+                                    &ltbutton onClick={handleClick}>{count}&lt/button>
+                                    &lt/div>
+                                );
+                              }
+					    </code>
+				    </pre>
+
+
+
+                    
+
+				    <h3 class="mt-5 mb-3">useId</h3>
+				    <p> useId is a hook for generating unique IDs that are stable across the server and client, while avoiding hydration mismatches. 
+                        useId is not for generating keys in a list. Keys should be generated from your data. </p>
+
+				
+				    <pre>
+					    <code>
+                            function Checkbox() {
+                                const id = useId();
+                                return (
+                                    &lt>
+                                    <label htmlFor={id}>Do you like React?</label>
+                                    <input id={id} type="checkbox" name="react"/>
+                                    &lt/>
+                                );
+                              };
+
+
+
+
+
+                              function NameFields() {
+                                const id = useId();
+                                return (
+                                    &ltdiv>
+                                    &ltlabel htmlFor={id + '-firstName'}>First Name&lt/label>
+                                    &ltdiv>
+                                    &ltinput id={id + '-firstName'} type="text" />
+                                    &lt/div>
+                                    &ltlabel htmlFor={id + '-lastName'}>Last Name&lt/label>
+                                    &ltdiv>
+                                    &ltinput id={id + '-lastName'} type="text" />
+                                      &lt/div>
+                                      &lt/div>
+                                );
+                              }
+					    </code>
+				    </pre>
+
+                    <p>useId generates a string that includes the : token. This helps ensure that the token is unique, but is not supported in CSS selectors or APIs like querySelectorAll.
+
+                        useId supports an identifierPrefix to prevent collisions in multi-root apps. To configure, see the options for hydrateRoot and ReactDOMServer.</p>
+
+
+
+
+
+
+
+
+
+<!-- 
+				    <h3 class="mt-5 mb-3">Typography</h3>
+				    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				    <h5 class="my-3">Bullet Points:</h5>
+				    <ul class="mb-5">
+					  <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+					  <li class="mb-2">Aenean commodo ligula eget dolor.</li>
+					  <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+					</ul>
+					<ol class="mb-5">
+					  <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+					  <li class="mb-2">Aenean commodo ligula eget dolor.</li>
+					  <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+					</ol> -->
+					<h5 class="my-3">Quote:</h5>
+					<blockquote class="blockquote m-lg-5 py-3 pl-4 px-lg-5">
+						<p class="mb-2">You don’t have to be great to start, but you have to start to be great.
+
+                        </p>
+						<footer class="blockquote-footer">Zig Ziglar</footer>
+					</blockquote>
+					
+					<!-- <h5 class="my-3">Table Example:</h5>
+					<table class="table table-striped my-5">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">First</th>
+								<th scope="col">Last</th>
+								<th scope="col">Handle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+					 -->
+			
+
+				    
+				    <h3 class="mt-5 mb-3">MERN Stack</h3>
+				    <p>MERN Stack is a collection of powerful technologies and robust, used to develop scalable master web applications comprising backend, front-end, and database components. It is JavaScript that is used for the faster and easier development of full-stack web applications. MERN Stack is a technology that is a user-friendly full-stack JavaScript framework for building applications and dynamic websites. </p>
+
+				    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/882vIhgFAyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="indexblog.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog-cssFlex.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				<!-- <div class="blog-comments-section">
+					<div id="disqus_thread"></div> -->
+					<script>
+					    /**
+					     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
+					     *  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
+					     *  PLATFORM OR CMS.
+					     *  
+					     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
+					     *  https://disqus.com/admin/universalcode/#configuration-variables
+					     */
+					    /*
+					    var disqus_config = function () {
+					        // Replace PAGE_URL with your page's canonical URL variable
+					        this.page.url = PAGE_URL;  
+					        
+					        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					        this.page.identifier = PAGE_IDENTIFIER; 
+					    };
+					    */
+					    
+					    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+					        var d = document, s = d.createElement('script');
+					        
+					        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+					        s.src = 'https://3wmthemes.disqus.com/embed.js';
+					        
+					        s.setAttribute('data-timestamp', +new Date());
+					        (d.head || d.body).appendChild(s);
+					    })();
+					</script>
+					<!-- <noscript>
+					    Please enable JavaScript to view the 
+					    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					        comments powered by Disqus.
+					    </a>
+					</noscript> -->
+				</div><!--//blog-comments-section-->
+				
+		    </div><!--//container-->
+	    </article>
+
+
+	
+	  
+    
+    </div><!--//main-wrapper-->
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div><!--//panel-inner-->
+    </div><!--//configure-panel-->
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+

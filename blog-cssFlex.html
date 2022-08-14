@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Css Flexbox</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+	<link id="theme-style" rel="stylesheet" href="assets/css/blog.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="indexblog.html">Aditya's Blogs</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/WhatsApp Image 2022-07-21 at 9.56.22 PM (1)-modified.png" alt="image" >			
+					
+					<div class="bio mb-3">Hi, my name is Aditya Kumar, Enthusiastic Software Engineer.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/aditya-kumar-814291117"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Aditya715068"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://stackoverflow.com/users/19761657/aditya-se"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://codepen.io/aditya715068"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item active">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+				    <a class="btn btn-primary" href="mailto:adikumar1238@gmail.com">Get in Touch</a>
+				</div>
+			</div>
+		</nav>
+    </header>
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">THE ULTIMATE FLEXBOX CHEAT SHEET</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://made4dev.com"><img class="img-fluid" src="https://www.codesnail.com/wp-content/uploads/2021/02/css-flexbox-1024x576.png" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="@" target="_blank">codenails.com</a></figcaption>
+				    </figure>
+				    <p> The Flexbox Layout (Flexible Box) module (a W3C Candidate Recommendation as of October 2017) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word “flex”).</p>
+					<p>If you’re new to Hooks, you might want to check out the overview first:
+
+                        The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space or shrinks them to prevent overflow.
+
+                        Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).
+
+
+					</p>
+
+
+                    <p>Note: Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the Grid layout is intended for larger scale layouts.</p>
+
+
+
+
+					
+						<h3 class="mt-5 mb-3">Create a flex container</h3>
+						
+						<p>The first step in any flexbox layout is to create a flex container. To do that, set the display property to flex. In Safari, you will still have to use the -webkit prefix. </p>
+						<pre>
+							<code>
+								
+
+                                 .flexcontainer {
+                                    display: -webkit-flex;
+                                    display: flex;
+                                 }
+                                    
+							</code>
+						</pre>
+					
+
+						<h3 class="mt-5 mb-3">Put flex items into a row</h3>
+						<p>Flex items are the children of a flex container. They are positioned along a main axis and a cross axis. The main axis is horizontal by default, so the items flow into a row. You can flip the main axis by setting flex-direction to column, it's set to row by default.</p>
+
+
+						<pre>
+							<code>
+                                /*On the flex container*/
+
+                                .flexcontainer {
+                                   display: flex;
+                                   flex-direction: row;
+                                }
+                            
+                            </code>
+						</pre>
+
+
+
+                    
+
+
+
+
+
+<h3 class="mt-5 mb-3">Put flex items into a column</h3>
+		
+
+                            <pre>
+                                <code>
+                                    
+                                    .flexcontainer {
+                                        display: flex;
+                                        flex-direction: column;
+                                     }
+                                    
+                                </code>
+                            </pre>
+
+
+
+                            <P>Move flex items to the top</P>
+
+                            <pre>
+                              
+							<code>
+                                .flexcontainer {
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                 }
+                         
+                                </code>
+                            </pre>
+
+
+                 
+
+
+
+
+
+
+
+
+
+						<h3 class="mt-5 mb-3">Move flex items to the right</h3>
+					
+    <pre>
+        <code>
+
+            .flexcontainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+             }
+        </code>
+    </pre>
+ 
+
+<pre>
+	<code>
+       
+        .flexcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+         }
+	</code>
+</pre>
+
+
+
+
+
+
+<h3 class="mt-5 mb-3">Center everything</h3>
+<p>Vertical and horizontal centering within a flexcontainer is trivial. Just set justify-content and/or align-items to center. Again, it depends on the orientation of the main axis, so whether flex-direction is set to row or column.</p>
+
+
+
+<pre>
+	<code>
+        .flexcontainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+         }
+	</code>
+</pre>
+
+
+<h3 class="mt-5 mb-3">Grow a flex item X times as big as other flex items</h3>
+
+<p>You can define how an individual flex item grows and shrinks relative to other flex items in the container. To do this set the flex property on each flex item you want to grow or shrink.</p>
+<pre>
+	<code>
+        .bigitem {
+            /* This will be twice as */
+            /* big as the small item. */
+            flex: 2 0 0;
+         }
+         .smallitem {
+            flex: 1 0 0;
+         }
+          
+	</code>
+</pre>
+
+
+
+
+
+<h3 class="mt-5 mb-3">Wrap flex items into multiple rows</h3>
+
+
+	<pre>
+		<code>
+            /* On the flex container */
+            .flexcontainer {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               /* You can set flex-wrap and
+                  flex-direction individually */
+               flex-direction: row;
+               flex-wrap: wrap;
+               /* Or do it all in one line
+                 with flex flow */
+               flex-flow: row wrap;
+               /* tweak where items line
+                  up on the row
+                  valid values are: flex-start,
+                  flex-end, space-between,
+                  space-around, stretch */
+               align-content: flex-end;
+            }
+		</code>
+	</pre>
+
+
+
+
+
+
+
+
+
+
+	
+
+	<h3 class="mt-5 mb-3">Remove the space from wrapped rows or columns</h3>
+	<p> The align-content property gives you options for distributing the space around wrapped rows or columns. The options are flex-start, flex-end, space-between, space-around and stretch. To simply remove the space around wrapped columns, set align-content to center.</p>
+
+
+
+
+
+	<pre>
+		<code>
+            .flexcontainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column wrap;
+                align-content: center;
+             
+             }
+                
+		</code>
+	</pre>
+
+
+
+				    <h3 class="mt-5 mb-3">Pin an element to one side of the flex container</h3>
+				    <p>You can control the align-items value for individual elements with align-self. You can also use margins to move individual elements up or down or left of right. e.g. on a column layout you can move an individual flex item all the way to the left of the container by setting margin-right: auto. </p>
+
+				    <pre>
+					    <code>
+                          
+                            /* On the flex item to pin */
+                            .left {
+                               align-self: flex-start;
+                            }
+                            
+                            .right {
+                               margin-left: auto;
+                            }
+					    </code>
+				    </pre>
+
+
+
+                    
+
+
+
+
+
+
+<!-- 
+				    <h3 class="mt-5 mb-3">Typography</h3>
+				    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				    <h5 class="my-3">Bullet Points:</h5>
+				    <ul class="mb-5">
+					  <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+					  <li class="mb-2">Aenean commodo ligula eget dolor.</li>
+					  <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+					</ul>
+					<ol class="mb-5">
+					  <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+					  <li class="mb-2">Aenean commodo ligula eget dolor.</li>
+					  <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+					</ol> -->
+					<h5 class="my-3">Quote:</h5>
+					<blockquote class="blockquote m-lg-5 py-3 pl-4 px-lg-5">
+						<p class="mb-2">The only place where success comes before work is in the dictionary.
+
+                        </p>
+						<footer class="blockquote-footer">Vidal Sassoon</footer>
+					</blockquote>
+					
+					<!-- <h5 class="my-3">Table Example:</h5>
+					<table class="table table-striped my-5">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">First</th>
+								<th scope="col">Last</th>
+								<th scope="col">Handle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+					 -->
+			
+                   
+				   
+			    </div>
+
+                <div class="containering">
+
+                    <span class="border tl">border-top-left</span>
+                    <span class="border tr">border-top-right</span>
+                    <span class="border bl">border-bottom-left</span>
+                    <span class="border br">border-bottom-right</span>
+                  
+                    <h1>Multiple Border-Radius Values</h1>
+                  
+                    <p>You probably knew that you can set the border-radius of an element to 4 values, and using shorthand, it goes clock-wise from top, right, bottom, left.</p>
+                  
+                    <p>But did you know you can actually set up to 8 values if you separate them? Each corner can have 2 values as you can see in this example.</p>
+                  
+                    <pre>
+                    .containering {
+                        border-top-left-radius: 37px 140px;
+                        border-top-right-radius: 23px 130px;
+                        border-bottom-left-radius: 110px 19px;
+                        border-bottom-right-radius: 120px 24px;
+                      }</pre>
+                  
+                  </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="indexblog.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog-post.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				<!-- <div class="blog-comments-section">
+					<div id="disqus_thread"></div> -->
+					<script>
+					    /**
+					     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
+					     *  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
+					     *  PLATFORM OR CMS.
+					     *  
+					     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
+					     *  https://disqus.com/admin/universalcode/#configuration-variables
+					     */
+					    /*
+					    var disqus_config = function () {
+					        // Replace PAGE_URL with your page's canonical URL variable
+					        this.page.url = PAGE_URL;  
+					        
+					        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					        this.page.identifier = PAGE_IDENTIFIER; 
+					    };
+					    */
+					    
+					    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+					        var d = document, s = d.createElement('script');
+					        
+					        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+					        s.src = 'https://3wmthemes.disqus.com/embed.js';
+					        
+					        s.setAttribute('data-timestamp', +new Date());
+					        (d.head || d.body).appendChild(s);
+					    })();
+					</script>
+					<!-- <noscript>
+					    Please enable JavaScript to view the 
+					    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					        comments powered by Disqus.
+					    </a>
+					</noscript> -->
+				</div><!--//blog-comments-section-->
+				
+		    </div><!--//container-->
+	    </article>
+
+
+	
+	  
+    
+    </div><!--//main-wrapper-->
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div><!--//panel-inner-->
+    </div><!--//configure-panel-->
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+

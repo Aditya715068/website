@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>OOPS in js</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+	<link id="theme-style" rel="stylesheet" href="assets/css/blog.css">
+    
+
+</head> 
+
+<body>
+    
+	<header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href='indexblog.html'>Aditya's Blogs</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/WhatsApp Image 2022-07-21 at 9.56.22 PM (1)-modified.png" alt="image" >			
+					
+					<div class="bio mb-3">Hi, my name is Aditya Kumar, Enthusiastic Software Engineer.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/aditya-kumar-814291117"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Aditya715068"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://stackoverflow.com/users/19761657/aditya-se"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://codepen.io/aditya715068"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item active">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+				    <a class="btn btn-primary" href="mailto:adikumar1238@gmail.com">Get in Touch</a>
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">A Guide to Object-Oriented Programming in JavaScript</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://made4dev.com"><img class="img-fluid" src="https://lh6.googleusercontent.com/proxy/dgjVdFMl4VdyYge1PrRBgM6dMQB1CnOhPysISVR0GQo_OPErbtvu5QXz1K9gZLX0O71vDlB9UUwE7x6XD4qZ2vNuxbQ=w1200-h630-p-k-no-nu" alt="image"></a>
+				       
+				    </figure>
+				    <p> An object is a thing that we interact with, it has properties and methods. The object is the heart of object-oriented programming, not only for JavaScript but also for Java, C, C++, and others. Stop thinking about individual variables and functions and start thinking in terms of self-sufficient objects.</p>
+					<p>Here’s a list of concepts that are most often used when talking about object-oriented programming (OOP):
+
+					
+						<ul class="mb-5">
+						  <li class="mb-2">Object, property, and method.</li>
+						  <li class="mb-2">Class</li>
+						  <li class="mb-2">Encapsulation</li>
+						  <li class="mb-2">Abstraction</li>
+						  <li class="mb-2">Reusability/inheritance</li>
+						  <li class="mb-2">Polymorphism</li>
+						</ul>
+
+					</p>
+
+
+
+
+						<h3 class="mt-5 mb-3">Object, property, and method</h3>
+						<h3 class="mt-5 mb-3">Object literal</h3>
+						<p> Create a new object in JavaScript by setting its properties inside curly braces. Object literals property values can be any data types, like function literals, arrays, strings, numbers, or boolean.</p>
+						<p>Let’s create an object with a named book, with properties such as author, published year, title, and a method</p>
+						<pre>
+							<code>
+								const book = {
+									title: "Hippie",    
+									author: "Paulo Coelho",  
+									year: "2018"
+								 }
+							</code>
+						</pre>
+						<p>After creating an object you can get the value with dot notation. For example, we can get the value of the title with book.title. We can also access the properties with square brackets: book[‘title’].
+
+						</p>
+
+						<h3 class="mt-5 mb-3">Object constructor</h3>
+						<p>Object constructor is the same as a regular function. It will be called each time an object is created. We can use them with the new keyword. Object constructor is useful when we want to create multiple objects with the same properties and methods.</p>
+
+
+						<pre>
+							<code>
+								const book = {
+									title: "Hippie",    
+									author: "Paulo Coelho",  
+									year: "2018"
+								 }
+								 const book1 = {
+									title: "The Alchemist",    
+									author: "Paulo Coelho",  
+									year: "1988", 
+								 }
+							</code>
+						</pre>
+
+						<h3 class="mt-5 mb-3">Object.create()</h3>
+						<p>Every object in JavaScript will create from the master Object. whenever we use object with a capital ‘O’ it refers to the master object. We can print the master object in the console. The master object has the number of methods and here we are going to see Object.create() method.</p>
+
+
+
+
+						<<h3 class="mt-5 mb-3">Class</h3>
+						<p>Class is not an object — it is the blueprint of an object. Classes are special functions. You can define functions using function expressions and declarations and you can define classes that way as well. We can create the number of objects using the blueprint.</p>
+
+<p>Class is just a template. You can't perform any actions on it. Consider class is your website UX Design(wireframes). You create it to get an idea of how your website UI will look alike at the end. Users can't do interactions with your wireframes as they will do on an actual website.</p>
+
+<p>ES6 class syntax:</p>
+
+<pre>
+	<code>
+		class Book {
+			constructor(name) {
+			   this.name = name
+			}
+		 }
+		 class newBook extends Book { 
+			constructor(name) {
+			   super(name);
+			}
+		 }
+		 const book1 = new newBook("The Alchemist");
+	</code>
+</pre>
+
+
+
+<p>Class syntax is syntactical sugar — behind the scenes, it still uses a prototype-based model. Classes are functions, and functions are objects in JavaScript.</p>
+
+
+<h3 class="mt-5 mb-3">Encapsulation</h3>
+<p>Encapsulation is defined as binding the data and methods into a single unit to protect it from outside access. Just like a pill contains medication inside of its coating.</p>
+<p>Encapsulation means hiding information or data. It refers to the ability of the object to execute its functionality without revealing any execution details to the caller. In other words, the private variable is only visible to the current function and is not accessible to the global scope or other functions.</p>
+
+
+<pre>
+	<code>
+		const Book = function(t, a) {
+			let title = t; 
+			let author = a; 
+			
+			return {
+			   summary : function() { 
+				 console.log(`${title} written by ${author}.`);
+			   } 
+			}
+		 }
+		 const book1 = new Book('Hippie', 'Paulo Coelho');
+		 book1.summary();
+		 > Hippie written by Paulo Coelho.
+	</code>
+</pre>
+
+<p>In the above code the title and the author are only visible inside the scope of the function Book and the method summary is visible to the caller of Book. So the title and the author are encapsulated inside Book.</p>
+
+<p>It's like creating a getter/setter method for the private properties we declare in a class.</p>
+
+
+<h3 class="mt-5 mb-3">Abstraction</h3>
+
+<p>People often misunderstood encapsulation with abstraction. Abstraction is one step ahead of encapsulation. Abstraction is defined as showing only the essential things and hiding the inner implementation.</p>
+<p>Let's take an example of a car. On a Car, we can perform some actions like start, break and stop. Whenever you call one of these actions, it gives you some result. These actions have certain sub-actions which are hidden from you, but you don't need to care about those sub-actions.
+
+	This is how car company uses an abstraction of functionality to give their customer a smooth experience.</p>
+
+	<p>Abstraction means implementation hiding. It is a way of hiding the implementation details and only showing the essential features to the caller. In other words, it hides irrelevant details and shows only what’s necessary to the outer world. A lack of abstraction will lead to problems of code maintainability</p>
+
+
+
+	<pre>
+		<code>
+			const Book = function(getTitle, getAuthor) { 
+				// Private variables / properties  
+				let title = getTitle; 
+				let author = getAuthor;
+			 // Public method 
+				this.giveTitle = function() {
+				   return title;
+				}
+				
+				// Private method
+				const summary = function() {
+				   return `${title} written by ${author}.`
+				}
+			 // Public method that has access to private method.
+				this.giveSummary = function() {
+				   return summary()
+				} 
+			 }
+			 const book1 = new Book('Hippie', 'Paulo Coelho');
+			 book1.giveTitle();
+			 > "Hippie"
+			 book1.summary();
+			 > Uncaught TypeError: book1.summary is not a function
+			 book1.giveSummary();
+			 > "Hippie written by Paulo Coelho."
+		</code>
+	</pre>
+
+	<p>In OOP languages like Java, we have a concept of abstract classes and interfaces. That's not possible in javascript.</p>
+
+
+	<h3 class="mt-5 mb-3">Reusability/Inheritance</h3>
+	<p>JavaScript inheritance is a mechanism allows us to create a new class using the existing class. It means the child class inherits all the properties and behaviors of the parent class.</p>
+
+<p>Generally, JavaScript is not a class-based language. The keyword class was introduced in ES6 but is syntactical sugar, JavaScript remains prototype-based. In JavaScript inheritance is achieved by using the prototype. This pattern is called Behavior Delegation Pattern or prototypal inheritance.</p>
+
+
+	<p>When one class derived the properties and methods of another class it is called inheritance in OOP. The class that inherits the property is known as subclass or child class and the class whose properties are inherited is known as a superclass or parent class.</p>
+
+
+
+
+	<pre>
+		<code>
+			class User {
+				#password;
+				constructor(email, password) {
+				  this.email = email;
+				  this.#password = password;
+				}
+			  
+				login(email, password) {
+				  if (email === this.email && password === this.#password) {
+					console.log('Login Successfully');
+				  } else {
+					console.log('Authentication Failed!!');
+				  }
+				}
+			  
+				resetPassword(newPassword) {
+				  this.#password = newPassword;
+				}
+			  
+				logout() {
+				  console.log('Logout Successfully');
+				}
+			  }
+			  
+			  class Author extends User {
+				#numOfPost;
+			  
+				constructor(email, password) {
+				  super(email, password);
+				  this.#numOfPost = 0;
+				}
+			  
+				createPost(content) {
+				  // add content to your DB. :)
+				  this.#numOfPost++;
+				}
+			  
+				getNumOfPost() {
+				  return this.#numOfPost;
+				}
+			  }
+			  
+			  class Admin extends User {
+				constructor(email, password) {
+				  super(email, password);
+				}
+			  
+				removeUser(userId) {
+				  // remove this userId from your DB.
+				  console.log('User Removed successfully.');
+				}
+			  }
+			  
+			  const aditya = new Author('aditya@gmail.com', 'password:)');
+			  aditya.login('aditya@gmail.com', 'password:)');
+			  aditya.createPost('I hope you are enjoying this article. Don\'t forget to leave your feedback. :)');
+			  aditya.createPost('I am tired, Do you wanna buy me a coffee? :)');
+			  console.log(aditya.getNumOfPost()); // 2
+			  
+			  const json = new Admin('aditya@gmail.com', '[Object] [object]');
+			  json.login('aditya@gmail.com', '[Object] [object]');
+			  json.resetPassword('{id: 1}');
+			  json.login('aditya@gmail.com', '{id: 1}');
+			  json.removeUser(12);
+			  
+		</code>
+	</pre>
+
+	<p>The extends keyword is used to establish a parent-child relationship between two classes. In the first case, the Author becomes sub-class and the User becomes parent class.</p>
+
+
+
+<p>Sub-class has access to all the public and protected members of a superclass. In addition, It can have its own properties and methods. This is how we can achieve reusability through inheritance.</p>
+
+<p>The child class can also override the methods of a parent class. This introduces the concept of polymorphism.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				    <h3 class="mt-5 mb-3">Polymorphism</h3>
+				    <p> Polymorphism means 'more than one form'. Like us, We the software engineers can work on the frontend, backend, DevOps and even testing. </p>
+
+					<p>The ability to call the same method on different objects and have each of them respond in their own way is called polymorphism.</p>
+				    <pre>
+					    <code>
+							let book1 = function () {}
+							book1.prototype.summary = function() {
+							   return "summary of book1"
+							}
+							let book2 = function() {}
+							book2.prototype = Object.create(book1.prototype);
+							book2.prototype.summary = function() {                 
+							   return "summary of book2"
+							}
+							let book3 = function() {}
+							book3.prototype = Object.create(book1.prototype);
+							book3.prototype.summary = function() {
+							   return "summary of book3"
+							}
+							   
+							var books = [new book1(), new book2(), new book3()];
+							books.forEach(function(book){
+							   console.log(book.summary());
+							});
+							> summary of book1
+							> summary of book2
+							> summary of book3
+					    </code>
+				    </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+				    <h3 class="mt-5 mb-3">Typography</h3>
+				    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				    <h5 class="my-3">Bullet Points:</h5>
+				    <ul class="mb-5">
+					  <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+					  <li class="mb-2">Aenean commodo ligula eget dolor.</li>
+					  <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+					</ul>
+					<ol class="mb-5">
+					  <li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+					  <li class="mb-2">Aenean commodo ligula eget dolor.</li>
+					  <li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+					</ol>
+					<h5 class="my-3">Quote Example:</h5>
+					<blockquote class="blockquote m-lg-5 py-3 pl-4 px-lg-5">
+						<p class="mb-2">You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.</p>
+						<footer class="blockquote-footer">John Romero</footer>
+					</blockquote>
+					
+					<h5 class="my-3">Table Example:</h5>
+					<table class="table table-striped my-5">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">First</th>
+								<th scope="col">Last</th>
+								<th scope="col">Handle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h5 class="mb-3">Embed A Tweet:</h5>
+					
+					<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">1969:<br>-what&#39;re you doing with that 2KB of RAM?<br>-sending people to the moon<br><br>2017:<br>-what&#39;re you doing with that 1.5GB of RAM?<br>-running Slack</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/926458505355235328?ref_src=twsrc%5Etfw">November 3, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+				    
+				    <h3 class="mt-5 mb-3">Video Example</h3>
+				    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+
+				    <div class="embed-responsive embed-responsive-16by9">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/-YBu2ed7pbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="indexblog.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog-cssFlex.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				<div class="blog-comments-section">
+					<div id="disqus_thread"></div>
+					<script>
+					    /**
+					     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
+					     *  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
+					     *  PLATFORM OR CMS.
+					     *  
+					     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
+					     *  https://disqus.com/admin/universalcode/#configuration-variables
+					     */
+					    /*
+					    var disqus_config = function () {
+					        // Replace PAGE_URL with your page's canonical URL variable
+					        this.page.url = PAGE_URL;  
+					        
+					        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					        this.page.identifier = PAGE_IDENTIFIER; 
+					    };
+					    */
+					    
+					    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+					        var d = document, s = d.createElement('script');
+					        
+					        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+					        s.src = 'https://3wmthemes.disqus.com/embed.js';
+					        
+					        s.setAttribute('data-timestamp', +new Date());
+					        (d.head || d.body).appendChild(s);
+					    })();
+					</script>
+					<noscript>
+					    Please enable JavaScript to view the 
+					    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					        comments powered by Disqus.
+					    </a>
+					</noscript>
+				</div><!--//blog-comments-section-->
+				
+		    </div><!--//container-->
+	    </article>
+
+	
+	  
+	    
+	 
+    
+    </div><!--//main-wrapper-->
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div><!--//panel-inner-->
+    </div><!--//configure-panel-->
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
