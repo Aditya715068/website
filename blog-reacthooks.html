@@ -114,7 +114,7 @@
 						<p>useState() hook allows one to declare a state variable inside a function. It should be noted that one use of useState() can only be used to declare one state variable. </p>
 						<pre>
 							<code>
-								const [state, setState] = useState(initialState);
+const [state, setState] = useState(initialState);
 							</code>
 						</pre>
 					
@@ -125,7 +125,7 @@
 
 						<pre>
 							<code>
-								useEffect(
+useEffect(
   () => {
     const subscription = props.source.subscribe();
     return () => {
@@ -163,13 +163,12 @@
                             <pre>
                                 <code>
                                     
-        import { useState } from "react";
-        import ReactDOM from "react-dom/client";
+ import { useState } from "react";
+ import ReactDOM from "react-dom/client";
                                     
-          function Component1() {
-              const [user, setUser] = useState("Jesse Hall");
-                                    
-                     return (
+  function Component1() {
+   const [user, setUser] = useState("Jesse Hall");
+        return (
                       &lt;>   
                        &lt;h1>{`Hello ${user}!`}&lt;/h1>
                        &lt;Component2 user={user} /
@@ -177,7 +176,7 @@
                      );
                          }
                                     
-           function Component2({ user }) {
+ function Component2({ user }) {
                      return (
                      &lt;>
                    &lt;h1>Component 2&lt;/h1>
@@ -186,7 +185,7 @@
                            );
                   }
                                     
-            function Component3({ user }) {
+  function Component3({ user }) {
                       return (
                          &lt;>
                        &lt;h1>Component 3&lt;/h1>
@@ -195,7 +194,7 @@
                                     );
                                     }
                                     
-                function Component4({ user }) {
+    function Component4({ user }) {
                          return (
                           &lt;>
                        &lt;h1>Component 4&lt;/h1>
@@ -204,7 +203,7 @@
                            );
                                     }
                                     
-                function Component5({ user }) {
+     function Component5({ user }) {
                        return (
                           &lt;>
                        &lt;h1>Component 5&lt;/h1>
@@ -213,8 +212,8 @@
                                       );
                                     }
                                     
-                       const root = ReactDOM.createRoot(document.getElementById('root'));
-                       root.render(&lt;Component1 />);
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(&lt;Component1 />);
                                     
                                 </code>
                             </pre>
@@ -228,10 +227,10 @@
                                 <code>
                                  	<pre>
 							<code>
-                                import { useState, createContext } from "react";
-                                import ReactDOM from "react-dom/client";
+       import { useState, createContext } from "react";
+       import ReactDOM from "react-dom/client";
                                 
-                                const UserContext = createContext()
+       const UserContext = createContext()
 							</code>
 						</pre>
                                 </code>
@@ -242,16 +241,16 @@
                             <pre>
                                
 							<code>
-                                function Component1() {
-                                    const [user, setUser] = useState("Jesse Hall");
+         function Component1() {
+          const [user, setUser] = useState("Jesse Hall");
                                   
-                                    return (
-                                        &lt;UserContext.Provider value={user}>
-                                        &lt;h1>{`Hello ${user}!`}&lt;/h1>
-                                        &lt;Component2 user={user} />
-                                        &lt;/UserContext.Provider>
-                                    );
-                                  }
+                  return (
+                        &lt;UserContext.Provider value={user}>
+                        &lt;h1>{`Hello ${user}!`}&lt;/h1>
+                        &lt;Component2 user={user} />
+                        &lt;/UserContext.Provider>
+                          );
+                               }
 							</code>
 						</pre>
                                 
@@ -636,7 +635,7 @@
 
 	<pre>
 		<code>
-			import { useRef } from "react";
+import { useRef } from "react";
 import ReactDOM from "react-dom/client";
 
 function App() {
